@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 
 class Clock extends Component {
     render() {
+        const intDays = function() {
+            return Math.trunc(time.asDays())
+        }
         const time = this.props.timeRemaining;
         return (
             <div className="clock">
                 <div className="clock__days clock__box">
                     <label className="clock__title">DAYS</label>
-                    {/* messy, move into function */}
-                    <label className="clock__amount">{Math.trunc(time.asDays())}</label>
+                    <label className="clock__amount">{intDays()}</label>
                 </div>
                 <div className="clock__hours clock__box">
                     <label className="clock__title">HRS</label>
